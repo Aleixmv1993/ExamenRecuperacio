@@ -61,7 +61,6 @@ class Tauler{
 					}else{
 					$color = 'black';
 					}
-
 				}else{
 					if($col%2 == 0){
 					$color = 'black';
@@ -79,12 +78,12 @@ class Tauler{
 		echo '<table border="1">';
 			for($i = 0; $i< $this->nRows; $i++){
 				echo '<tr>';
-					for($j = 0; $j < $nCols; $j++){
-						$quadre = new Quadre($this->peces[$i][$j]);
+					for($x = 0; $x < $this->nCols; $x++){
+						$quadre = new Quadre($this->peces[$i][$x]);
 					}
 				echo '</tr>';
 				}
 				echo '</table>';
-				}	
+			}	
 
 }

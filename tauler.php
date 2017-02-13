@@ -63,7 +63,7 @@ class Tauler{
 					}
 
 				}else{
-					if($x%2 == 0){
+					if($col%2 == 0){
 					$color = 'black';
 					}else{
 					$color = 'whitesmoke';

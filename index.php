@@ -8,7 +8,6 @@
 	
 	$tauler->show();
 
-	$tauler = new Tauler(10,10,'aleat');
+	/*$tauler = new Tauler(10,10,'aleat');
 
-	$tauler->show();
- ?>
+	$tauler->show();*/

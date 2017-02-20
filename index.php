@@ -4,10 +4,13 @@
 
 	require 'tauler.php';
 
+	echo "<h1>Dames</h1>";
+	echo "<h3>Aleat a la part inferior</h3>";
 	$tauler =  new Tauler(8,8,'dames');
 	
 	$tauler->show();
 
-	/*$tauler = new Tauler(10,10,'aleat');
+	echo "<h1>Aleat</h1>";
+	$tauler = new Tauler(10,10,'aleat');
 
-	$tauler->show();*/
+	$tauler->show();

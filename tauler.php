@@ -7,47 +7,46 @@ class Tauler{
 	private $nRows=null;
 	private $ncols=null;
 
-	function __construct($nRows=null, $nCols=null,$tipus){
-
+	function __construct($nRows=null,$nCols=null,$tipus){
+		$this->nRows = $nRows;
+		$this->nCols = $nCols;
 		$this->tipus=$tipus;
 		switch ($this->tipus) {
-			case 'dames': $this->dames($nRows=null,$nCols=null,$tipus);
+			case 'dames': $this->dames($this->nRows,$this->nCols);
 				break;
-			case 'aleat': $this->aleat($nRows=null,$nCols=null,$tipus);
+			case 'aleat': $this->aleat($this->nRows,$this->nCols);
 				break;
 		}
 	}
-	function dames($nRows=null, $nCols=null,$tipus){
+	function dames($nRows=null, $nCols=null){
 		//la intencio de aquesta funcio es que dins de peces es puguin guardar els diferents colors
-
-		for ($i=0 ; $i < $nRows; $i++ ) { 
-			for ($x=0; $x < $nCols ; $x++) { 
-
+		for ($i=0; $i < $nRows; $i++ ) {
+			for ($x=0; $x < $nCols; $x++) { 
 				if ($i%2!=0) {
 					//aquest IF el que realitza es mirar si son parells en la files parelles per colocar el negre en les parelles i blanc en les imparelles
-					if($x%2 != 0){
-					$color = 'whitesmoke';
-					}else{
-					$color = 'black';
-					}
+						if($x%2 != 0){
+							$color = 'whitesmoke';
+						}else{
+							$color = 'black';
+						}
+					$this->peces[$i][$x] = $color;
 
 				}else{
 					//Aquest if realitza tot el contrari al anterior
-					if($x%2 == 0){
-					$color = 'black';
-					}else{
-					$color = 'whitesmoke';
-					}
+						if($x%2 == 0){
+							$color = 'whitesmoke';
+						}else{
+							$color = 'black';
+						}
+					$this->peces[$i][$x] = $color;
 				}
-				//guardar en el array quin color te cada vegada per despres poder mostrar amb el show.
-				$this->peces[i][x] = $color;
+				//Al final de cada if es guarda en el array quin color te cada vegada per despres poder mostrar amb el show.
+				
 			}
 		}
-		var_dump($this->peces);
-
 	}
 
-	function aleat($nRows=null, $nCols=null,$tipus){
+	function aleat($nRows=null, $nCols=null){
 	
 	
 		for ($i=0 ; $i < $nRows; $i++ ) { 
@@ -68,7 +67,7 @@ class Tauler{
 					$color = 'whitesmoke';
 					}
 				}
-				$this->peces[i][x] = $color;
+				$this->peces[$i][$x] = $color;
 			}
 		}
 
